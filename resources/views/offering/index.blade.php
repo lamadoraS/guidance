@@ -48,7 +48,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a href="javascript:history.back()" class="btn btn-primary">Back</a>
+                        <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a>
                     </div>
                 </div>
             </div>
