@@ -11,10 +11,11 @@ class Counselor extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
     'last_name',
-    'first_name', 
-    'contact_number', 
+    'first_name',  
     'email_address',
     'specialization',
     'office_location'];
     use HasFactory;
+
+
 }

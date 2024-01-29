@@ -10,9 +10,10 @@ class Appointment extends Model
     protected $table = 'appointments';
     protected $primaryKey = 'id';
     protected $fillable = [
+    'preferred_counselor',
+    'status',
     'date',
-    'time', 
-    'purpose', 
-    'status'];
+    'time'];
+    
     use HasFactory;
 }

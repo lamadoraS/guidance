@@ -19,6 +19,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Role</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                       
@@ -28,6 +29,7 @@
                                 @foreach($admins as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->role }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                        

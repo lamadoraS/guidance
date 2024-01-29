@@ -1,22 +1,24 @@
-@extends('appointment.layout')
+@extends('admin.layout')
 @section('content')
  
 <div class="card">
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
       
-      <form action="{{ url('appointment/' .$appointments->id) }}" method="post">
+      <form action="{{ url('admin/' .$admins->id) }}" method="post">
         {!! csrf_field() !!}
         @method("PATCH")
-        <input type="hidden" name="id" id="id" value="{{$appointments->id}}" id="id" />
-        <label>Date</label></br>
-        <input type="text" name="date" id="date" value="{{$appointments->date}}" class="form-control"></br>
-        <label>Time</label></br>
-        <input type="text" name="time" id="time" value="{{$appointments->time}}" class="form-control"></br>
-        <label>Purpose</label></br>
-        <input type="text" name="purpose" id="purpose" value="{{$appointments->purpose}}" class="form-control"></br>
-        <label>Status</label></br>
-        <input type="text" name="status" id="status" value="{{$appointments->status}}" class="form-control"></br>
+        <input type="hidden" name="id" id="id" value="{{$admins->id}}" id="id" />
+        <label for="role">Role</label><br>
+<select name="role" id="role" class="form-control">
+    <option value="admin" @if($admins->role == 'admin') selected @endif>Admin</option>
+    <option value="student" @if($admins->role == 'student') selected @endif>Student</option>
+</select><br>
+
+        <label>Name</label></br>
+        <input type="text" name="name" id="name" value="{{$admins->name}}" class="form-control"></br>
+        <label>Email Address</label></br>
+        <input type="text" name="email" id="email" value="{{$admins->email}}" class="form-control"></br>
          <input type="submit" value="Update" class="btn btn-success"></br>
     </form>
    

@@ -13,7 +13,7 @@
         <h5 class="card-text">Contact Number : {{ $counselors->contact_number }}</h5>
         <h5 class="card-title">Email Address : {{ $counselors->email_address }}</h5>
         <h5 class="card-title">Specialization : {{ $counselors->specialization }}</h5>
-        <h5 class="card-text">Office Location : {{ $counselors->pffice_location }}</h5>
+        <h5 class="card-text">Office Location : {{ $counselors->office_location }}</h5>
         
   </div>
        

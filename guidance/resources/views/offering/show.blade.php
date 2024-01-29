@@ -13,7 +13,7 @@
         <h5 class="card-text">Duration : {{ $offerings->duration }}</h5>
   </div>
        
-    </hr>
+   
   
   </div>
 </div>

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('offerings', function (Blueprint $table) {
             $table->id();
             $table->string("offering_name");
-            $table->string("specialty_offered");
+            $table->string("description");
+            $table->string("scheduled");
             $table->string("duration");
             $table->timestamps();
         });

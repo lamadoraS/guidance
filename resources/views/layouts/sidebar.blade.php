@@ -3,9 +3,8 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> <sup></sup></div>
+                <div class="sidebar-brand-text text-center mx-3"><p>{{Auth::user()->role}}</p><sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -27,78 +26,54 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
+
+            <ul class="nav">
+    @if(auth()->check())
+        @if(auth()->user()->role == 'admin')
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:8000/admin">
-                    <i class="fas fa-fw fa-table"> </i>
-                    <span>Admin</span></a>
+                    <span class="material-symbols-outlined"></span>
+                    <span>Admin</span>
+                </a>
             </li>
-            <!-- Nav Item - Utilities Collapse Menu -->
+            
+        @endif
+
+            @if(auth()->user()->role == 'admin' || auth()->user()->role == 'student')
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/offering">
+                    <span class="material-symbols-outlined"></span>
+                    <span>Offerings</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:8000/student">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Student</span></a>
+                    <span class="material-symbols-outlined"></span>
+                    <span>Student</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:8000/counselor">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Counselor</span></a>
+                    <span class="material-symbols-outlined"></span>
+                    <span>Counselor</span>
+                </a>
             </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:8000/appointment">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Appointments</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1:8000/offering">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Offerings</span></a>
-            </li>
-            
-            
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span class="material-symbols-outlined"></span>
+                    <span>Appointments</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
             </li>
+        @endif
+  
+    
+</ul>
 
-            <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li> -->
 
-            <!-- Nav Item - Tables -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li> -->
+            
 
+            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

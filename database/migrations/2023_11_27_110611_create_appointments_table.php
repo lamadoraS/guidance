@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->string("preferred_counselor");
+            $table->string("status");
             $table->string("date");
             $table->string("time");
-            $table->string("purpose");
-            $table->string("status");
             $table->timestamps();
         });
     }

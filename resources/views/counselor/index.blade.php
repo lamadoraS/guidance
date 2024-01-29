@@ -8,10 +8,12 @@
                     <div class="card-header">
                         <h2>Counselor Information</h2>
                     </div>
+                    @if(auth()->user()->role =='admin')
                     <div class="card-body">
                         <a href="{{ url('/counselor/create') }}" class="btn btn-success btn-sm" title="Add New Counselor">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
+                        @endif
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -21,7 +23,6 @@
                                         <th>#</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
-                                        <th>Contact Number</th>
                                         <th>Email Address</th>
                                         <th>Specialization</th>
                                         <th>Office Location</th>
@@ -33,10 +34,11 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->first_name }}</td>
                                         <td>{{ $item->last_name }}</td>
-                                        <td>{{ $item->contact_number }}</td>
                                         <td>{{ $item->email_address }}</td>
                                         <td>{{ $item->specialization }}</td>
                                         <td>{{ $item->office_location }}</td>
+                                    
+                                        @if(auth()->user()->role =='admin')
                                         
  
                                         <td>
@@ -49,12 +51,14 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Counselor" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                            <div> <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
                         </div>
-                        <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a>
+                       
                     </div>
                 </div>
             </div>

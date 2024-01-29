@@ -11,7 +11,8 @@ class Offering extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
     'offering_name',
-    'specialty_offered',
+    'description',
+    'scheduled',
     'duration'];
     use HasFactory;
 }

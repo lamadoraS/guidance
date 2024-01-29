@@ -24,7 +24,7 @@ class CounselorController extends Controller
     {
         $input = $request->all();
         Counselor::create($input);
-        return redirect('counselor')->with('flash_message', 'Counselor Addedd!');
+        return redirect('counselor')->with('flash_message', 'Counselor Added!');
     }
     public function show(string $id): View
     {

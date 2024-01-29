@@ -8,10 +8,12 @@
                     <div class="card-header">
                         <h2>Offerings Information</h2>
                     </div>
+                    @if(auth()->user()->role =='admin')
                     <div class="card-body">
                         <a href="{{ url('/offering/create') }}" class="btn btn-success btn-sm" title="Add New offers">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
+                        @endif
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -20,7 +22,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Offering Name</th>
-                                        <th>Specialty Offered</th>
+                                        <th>Description</th>
+                                        <th>Schedule</th>
                                         <th>Duration</th>
                                     </tr>
                                 </thead>
@@ -29,9 +32,10 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->offering_name }}</td>
-                                        <td>{{ $item->specialty_offered }}</td>
+                                        <td>{{ $item->description }}</td>
+                                        <td>{{ $item->schedule }}</td>
                                         <td>{{ $item->duration }}</td>
-                                        >
+                                        @if(auth()->user()->role =='admin')
  
                                         <td>
                                             <a href="{{ url('/offering/' . $item->id) }}" title="View offering"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -43,12 +47,14 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete offering" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                            <div><a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
                         </div>
-                        <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a>
+                        
                     </div>
                 </div>
             </div>

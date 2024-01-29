@@ -17,7 +17,7 @@
         <h5 class="card-text">Purpose : {{ $students->purpose }}</h5>
   </div>
        
-    </hr>
+    
   
   </div>
 </div>
