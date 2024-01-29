@@ -5,6 +5,7 @@
                     </div>
 
                     <!-- Content Row -->
+                    @if(auth()->user()->role=="admin")
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
@@ -24,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @if(auth()->user()->role=="admin")
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
@@ -91,3 +92,4 @@
 
                        
             </div>
+            @endif
