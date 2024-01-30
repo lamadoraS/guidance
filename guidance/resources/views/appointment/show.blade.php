@@ -8,10 +8,10 @@
    
  
         <div class="card-body">
-        <h5 class="card-title">Date : {{ $appointments->date }}</h5>
-        <h5 class="card-title">Time : {{ $appointments->time }}</h5>
-        <h5 class="card-text">Purpose : {{ $appointments->purpose }}</h5>
-        <h5 class="card-title">Status : {{ $appointments->status }}</h5>
+        <h5 class="card-title">Date : {{ $appointments->preferred_counselor }}</h5>
+        <h5 class="card-title">Time : {{ $appointments->status }}</h5>
+        <h5 class="card-text">Purpose : {{ $appointments->date }}</h5>
+        <h5 class="card-title">Status : {{ $appointments->time }}</h5>
         
   </div>
        

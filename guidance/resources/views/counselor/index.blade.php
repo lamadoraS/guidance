@@ -53,6 +53,12 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    {{$counselors->links()}}
+                                </ul>
+
+                            </nav>
                         </div>
  
                     </div>

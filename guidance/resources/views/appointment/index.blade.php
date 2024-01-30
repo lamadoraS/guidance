@@ -19,20 +19,20 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Preferred Counselor</th>
+                                        <th>Status</th>
                                         <th>Date</th>
                                         <th>Time</th>
-                                        <th>Purpose</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($appointments as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->preferred_counselor }}</td>
+                                        <td>{{ $item->status }}</td>
                                         <td>{{ $item->date }}</td>
                                         <td>{{ $item->time }}</td>
-                                        <td>{{ $item->purpose }}</td>
-                                        <td>{{ $item->status }}</td>
  
                                         <td>
                                             <a href="{{ url('/appointment/' . $item->id) }}" title="View Appointment"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -48,7 +48,9 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            
                         </div>
+
  
                     </div>
                 </div>

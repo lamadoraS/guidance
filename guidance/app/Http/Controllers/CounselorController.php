@@ -11,7 +11,7 @@ class CounselorController extends Controller
 {
     public function index(): View
     {
-        $counselors = Counselor::all();
+        $counselors = Counselor::paginate(5);
         return view ('counselor.index')->with('counselors', $counselors);
     }
  

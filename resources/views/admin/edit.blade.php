@@ -3,6 +3,10 @@
  
 <div class="card">
   <div class="card-header">Contactus Page</div>
+  <div class="form-group">
+    <label for="avatar">Avatar:</label>
+    <input type="file" name="avatar" class="form-control">
+</div>
   <div class="card-body">
       
       <form action="{{ url('admin/' .$admins->id) }}" method="post">

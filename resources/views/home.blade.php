@@ -39,4 +39,5 @@
     <!-- Logout Modal-->
     @include('layouts.logout-modal')
 
+    @include('layouts.profile.profilemodal')
 @include('layouts.footer')

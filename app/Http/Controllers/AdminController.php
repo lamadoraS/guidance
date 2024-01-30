@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminController extends Controller
@@ -41,8 +42,17 @@ class AdminController extends Controller
         $admins = User::find($id);
         $input = $request->all();
         $admins->update($input);
+
+
+        if ($request->hasFile('avatar')) {
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            Auth::user()->update(['avatar' => $avatarPath]);
+        }
         return redirect('admin')->with('flash_message', 'Admin Updated!');  
+    
+        
     }
+    
     
     public function destroy(string $id): RedirectResponse
     {
