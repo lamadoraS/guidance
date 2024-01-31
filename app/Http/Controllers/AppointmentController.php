@@ -5,14 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use Illuminate\Support\Facades\App;
 use Illuminate\View\View;
 
 class AppointmentController extends Controller
 {
+
+    
     public function index(): View
     {
-        $appointments = Appointment::all();
-        return view ('appointment.index')->with('appointments', $appointments);
+        $appointments = Appointment::simplePaginate(10); 
+        return view('appointment.index')->with('appointments', $appointments)->with('i',(request()->input('page', 1)- 1)* 10);
+        
     }
  
     public function create(): View

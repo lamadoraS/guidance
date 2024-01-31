@@ -8,6 +8,12 @@
                     <div class="card-header">
                         <h2>Student Information</h2>
                     </div>
+                    @if(session('flash_message'))
+    <div class="alert alert-success">
+        {{ session('flash_message') }}
+    </div>
+@endif
+
                     @if(auth()->user()->role =='student')
                     <div class="card-body">
                         <a href="{{ url('/student/create') }}" class="btn btn-success btn-sm" title="Add New Student">
@@ -31,7 +37,7 @@
                                 <tbody>
                                 @foreach($students as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ ++$i }}</td>
                                         <td>{{ $item->first_name }}</td>
                                         <td>{{ $item->last_name }}</td>
                                         <td>{{ $item->email_address }}</td>
@@ -52,11 +58,12 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div>   
-                                    <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
-                
-                        </div>
-                 
+                           
+               <div class="p-3">{{$students->links()}}</div>
+               <div class="p-3">   
+                <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
+
+    </div>  
                     </div>
                 </div>
             </div>

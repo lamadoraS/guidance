@@ -13,8 +13,6 @@
         <input type="text" name="first_name" id="first_name" value="{{$counselors->first_name}}" class="form-control"></br>
         <label>Last Name</label></br>
         <input type="text" name="last_name" id="last_name" value="{{$counselors->last_name}}" class="form-control"></br>
-        <label>Contact Number</label></br>
-        <input type="text" name="contact_number" id="contact_number" value="{{$counselors->contact_number}}" class="form-control"></br>
         <label>Email_Address</label></br>
         <input type="text" name="email_address" id="email_address" value="{{$counselors->email_address}}" class="form-control"></br>
         <label>Specialization</label></br>

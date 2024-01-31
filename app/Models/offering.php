@@ -12,7 +12,7 @@ class Offering extends Model
     protected $fillable = [
     'offering_name',
     'description',
-    'scheduled',
+    'schedule',
     'duration'];
     use HasFactory;
 }

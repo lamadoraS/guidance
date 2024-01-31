@@ -11,9 +11,11 @@ class CounselorController extends Controller
 {
     public function index(): View
     {
-        $counselors = Counselor::all();
-        return view ('counselor.index')->with('counselors', $counselors);
+        $counselors = Counselor::simplePaginate(10); 
+
+        return view('counselor.index')->with('counselors', $counselors)->with('i',(request()->input('page', 1)- 1)* 10);
     }
+ 
  
     public function create(): View
     {

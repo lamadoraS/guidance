@@ -31,7 +31,7 @@
                                 <tbody>
                                 @foreach($counselors as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ ++$i }}</td>
                                         <td>{{ $item->first_name }}</td>
                                         <td>{{ $item->last_name }}</td>
                                         <td>{{ $item->email_address }}</td>
@@ -56,8 +56,11 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div> <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
-                        </div>
+                            
+                            <div class="p-3">{{$counselors->links()}}</div>
+                            <div class="p-3">   
+                             <a href="{{url('http://127.0.0.1:8000/home')}}" class="btn btn-primary">Back</a></div>
+             
                        
                     </div>
                 </div>

@@ -50,10 +50,10 @@
                 <form action="{{ route('register') }}" method="post">
                     @csrf
                     <label for="role">Role</label><br>
-<select name="role" id="role" class="form-control">
-    <option value="admin">Admin</option>
-    <option value="student">Student</option>
-</select><br>
+                    <select id="role" class="form-control" name="role" required autofocus>
+
+                        <option value="student" selected{{ old('role') == 'student' ? ' selected' : '' }}>Student</option>
+                        </select><br>
                     <div class="form-group first">
                         <label for="name">{{ __('Name') }}</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

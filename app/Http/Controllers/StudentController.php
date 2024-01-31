@@ -7,16 +7,24 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use Illuminate\View\View;
 
+
+
+
 class StudentController extends Controller
 {
+    
     public function index(): View
     {
-        $students = Student::all();
-        return view ('student.index')->with('students', $students);
+      
+
+        $students = Student::simplePaginate(10); 
+
+        return view('student.index')->with('students', $students)->with('i',(request()->input('page', 1)- 1)* 10);
     }
  
     public function create(): View
     {
+        
         return view('student.create');
     }
   

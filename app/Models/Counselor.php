@@ -15,6 +15,8 @@ class Counselor extends Model
     'email_address',
     'specialization',
     'office_location'];
+
+    
     use HasFactory;
 
 

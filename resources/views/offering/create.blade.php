@@ -12,9 +12,9 @@
         <label>Description</label></br>
         <input type="text" name="description" id="description" class="form-control"></br>
         <label>Schedule</label></br>
-        <input type="text" name="schedule" id="schedule" class="form-control"></br>
+        <input type="date" name="schedule" id="schedule" class="form-control"></br>
         <label>Duration</label></br>
-        <input type="text" name="duration" id="duration" class="form-control"></br>
+        <input type="number" name="duration" id="duration" class="form-control"></br>
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
    

@@ -11,8 +11,6 @@
         <input type="text" name="first_name" id="first_name" class="form-control"></br>
         <label>Last Name</label></br>
         <input type="text" name="last_name" id="last_name" class="form-control"></br>
-        <label>Contact Number</label></br>
-        <input type="text" name="contact_number" id="contact_number" class="form-control"></br>
         <label>Email Address</label></br>
         <input type="text" name="email_address" id="email_address" class="form-control"></br>
         <label>Specialization</label></br>

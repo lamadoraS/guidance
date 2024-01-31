@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("offering_name");
             $table->string("description");
-            $table->string("scheduled");
+            $table->string("schedule");
             $table->string("duration");
             $table->timestamps();
         });
