@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
 use App\Models\Counselor;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
         $student = Student::count();
         $counselor = Counselor::count();
+        
 
         return view('home',compact('student','counselor'));
     }

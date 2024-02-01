@@ -11,9 +11,9 @@ class CounselorController extends Controller
 {
     public function index(): View
     {
-        $counselors = Counselor::simplePaginate(10); 
+        $counselors = Counselor::simplePaginate(5); 
 
-        return view('counselor.index')->with('counselors', $counselors)->with('i',(request()->input('page', 1)- 1)* 10);
+        return view('counselor.index')->with('counselors', $counselors)->with('i',(request()->input('page', 1)- 1)* 5);
     }
  
  

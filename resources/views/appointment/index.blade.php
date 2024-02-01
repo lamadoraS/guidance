@@ -8,11 +8,12 @@
                     <div class="card-header">
                         <h2>Appointment Information</h2>
                     </div>
-                    @if(auth()->user()->role =='admin')
+                    
                     <div class="card-body">
-                        <a href="{{ url('/appointment/create') }}">
+                        <a href="{{ url('/appointment/create') }}" class="btn btn-success btn-sm" title="Add New Appointment">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
-                        @endif
+                        
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -37,7 +38,7 @@
                                         <td>{{ $item->time }}</td>
                                     
                                     
-                                        @if(auth()->user()->role =='admin')
+                                       
                                         
  
                                         <td>
@@ -50,7 +51,7 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Appointment" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
-                                        @endif
+                                        
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -14,7 +14,7 @@
     </div>
 @endif
 
-                    @if(auth()->user()->role =='student')
+                    @if(auth()->user()->role =='admin')
                     <div class="card-body">
                         <a href="{{ url('/student/create') }}" class="btn btn-success btn-sm" title="Add New Student">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -43,7 +43,7 @@
                                         <td>{{ $item->email_address }}</td>
                                         <td>{{ $item->age }}</td>
                                         <td>{{ $item->purpose }}</td>
-                                        @if(auth()->user()->role =='student')
+                                        @if(auth()->user()->role =='admin')
                                         <td>
                                             <a href="{{ url('/student/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/student/' . $item->id . '/edit') }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
